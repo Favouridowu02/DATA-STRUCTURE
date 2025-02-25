@@ -2,7 +2,7 @@
 """
     This Module contains the Sorted Squared
 
-Question:
+    Question:
     You are given an array of Integers in which
     each subsequent value is not less than the
     previous value. Write a function that takes
@@ -25,6 +25,7 @@ def sorted_squared(array):
     return array
 
 # This is an optimaised version of the sorted_squared method
+# Time = 0(n) Space = 0(n)
 def sorted_squared_array(array):
     """
         This function is used to sort the squares of the
