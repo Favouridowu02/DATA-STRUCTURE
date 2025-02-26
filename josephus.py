@@ -10,8 +10,8 @@ def findTheWinner(n, k):
         Josephus Problem solving Method
 
         Arguments:
-            n: The number
-            k: The Counting number
+            n: The Total number of people in the circle
+            k: The step Count number for elimination
     """
     # create an Array
     arr = [i + 1 for i in range(n)]
@@ -32,4 +32,9 @@ def findTheWinner(n, k):
 # Alternatives
 
 def findTheWinner_1(n, k):
-    
+    def josephus(n):
+        if n == 1:
+            return 0
+        #recursive case
+        return (josephus(n - 1) + k) % n
+    return josephus(n) + 1
