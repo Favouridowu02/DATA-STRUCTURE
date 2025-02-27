@@ -9,6 +9,10 @@ def findTheWinner(n, k):
         This function is used to find the Winner using
         Josephus Problem solving Method
 
+        This Approach has a Time complexity of O(n^2)
+        and Space Complexity of O(n)
+
+
         Arguments:
             n: The Total number of people in the circle
             k: The step Count number for elimination
@@ -32,9 +36,38 @@ def findTheWinner(n, k):
 # Alternatives
 
 def findTheWinner_1(n, k):
+    """
+        This function is used to find the Winner using
+        Josephus Problem solving Method
+
+        This Approach has a Time complexity of O(n)
+        and Space Complexity of O(n)
+
+
+        Arguments:
+            n: The Total number of people in the circle
+            k: The step Count number for elimination
+    """
     def josephus(n):
         if n == 1:
             return 0
         #recursive case
         return (josephus(n - 1) + k) % n
     return josephus(n) + 1
+
+def findTheWinner_2(n, k):
+    """
+        This function is used to find the Winner using
+        Josephus Problem solving Method
+
+        This Approach has a Time complexity of O(n)
+        and Space Complexity of 1
+
+        Arguments:
+            n: The Total number of people in the circle
+            k: The step Count number for elimination
+    """
+    survivor = 0
+    for i in range(2, n+1):
+        survivor = (survivor + k) % i
+    return survivor + 1
