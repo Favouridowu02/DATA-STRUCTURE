@@ -78,3 +78,82 @@ def combinationSum_1(candidates, target):
 
     helper(0, [], 0)
     return res 
+
+
+def combinationSum2(candidates, target):
+    """
+        This Function is used to find the combination
+
+        Arguments:
+            candidates: An array of integers
+            target: An Integer
+
+        Space Complexity: S - O(n)
+        Time Complexity: T - O(2^n)
+
+        Question: 
+        Given a collection of candidate numbers (candidates) and a target number
+        (target), find all unique combinations in candidates where the
+        candidate numbers sum to target.
+
+        Each number in candidates may only be used once in the combination.
+        Note: The solution set must not contain duplicate combinations.
+    """
+    candidates.sort()
+    res = []
+    n = len(candidates)
+    def helper(index, curr, curr_sum):
+        # Base case
+        if curr_sum == target:
+            res.append(curr[:])
+            return
+        if curr_sum > target:
+            return
+        if index > n - 1:
+            return
+        # Recursive case
+        hash = {}
+        for i in range(index, n):
+            if candidates[i] not in hash:
+                hash[candidates[i]] = True
+                curr.append(candidates[i])
+                helper(i + 1, curr, curr_sum + candidates[i])
+                curr.pop() # Back Tracking step
+
+
+    helper(0, [], 0)
+    return res
+
+
+
+def combinationSum3(k, n):
+    """
+        This Function is used to find the combination
+
+        Arguments:
+            candidates: An array of integers
+            target: An Integer
+
+        Space Complexity: S - O(n)
+        Time Complexity: T - O(2^n)
+
+        Question:
+        Find all valid combinations of k numbers that sum up to n such that
+        the following conditions are true: Only numbers 1 through 9 are used.
+        Each number is used at most once.
+        Return a list of all possible valid combinations.The list must not
+        contain the same combination twice, and the combinations may be returned in any order.
+    """
+    res = []
+    def backtrack(number,curr,currSum):
+        if currSum ==n and len(curr)==k:
+            res.append(curr[:])
+            return
+        if currSum >n or len(curr)==k:
+            return
+        for x in range(number,10):
+            curr.append(x)
+            backtrack(x+1,curr,currSum+x)
+            curr.pop()
+    backtrack(1,[],0)
+    return res  
