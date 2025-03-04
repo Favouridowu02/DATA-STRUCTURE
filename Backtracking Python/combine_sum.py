@@ -19,6 +19,20 @@
         Output: [[2,2,2,3],[3,3,3],[9]]
 """
 def combinationSum(candidates, target):
+    """
+        This Function used to find the sum
+
+        Arguments:
+            candidates: An array of numbers containing the candidatrees
+            target: an Integer.
+
+        Space Complexity: S = O(T/M)
+        Time Complexity: T = O(N^(T/M + 1))
+
+        Where N - no of candidates
+              T - target
+              M - minimum value among candidates
+    """
     #write code here
     #the integers in the candidates array are all non negative  
     res = []
@@ -45,3 +59,22 @@ a = [2, 3, 8, 9]
 target = 9
 
 print(combinationSum(a, target))
+
+
+# Alternatives
+def combinationSum_1(candidates, target):
+    res =[]
+    n = len(candidates)
+    def helper(start_index, curr, sum_included):
+        if sum_included > target:
+            return
+        if (sum_included == target):
+            res.append(curr[:])
+
+        for j in range(start_index, n):
+            curr.append(candidates[j])
+            helper(j, curr, sum_included + candidates[j])
+            curr.pop()
+
+    helper(0, [], 0)
+    return res 
