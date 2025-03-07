@@ -61,4 +61,4 @@ Contributions are welcome! If you would like to contribute to this repository, p
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-Happy coding!
+Happy coding! :)
