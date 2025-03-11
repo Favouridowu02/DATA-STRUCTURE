@@ -31,7 +31,7 @@ def findTheWinner(n, k):
         
     
     return helper(arr, 0)
-
+print(findTheWinner(5, 2))
 
 
 # Alternatives
