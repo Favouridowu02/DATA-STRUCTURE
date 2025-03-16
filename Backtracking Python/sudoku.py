@@ -54,9 +54,9 @@ def solveSudoku_2(self, board: List[List[str]]) -> None:
     """
     Do not return anything, modify board in-place instead.
     """
-        boxes = [{} for _ in range(9)]
-        rows = [{} for _ in range(9)]
-        cols = [{} for _ in range(9)]
+    boxes = [{} for _ in range(9)]
+    rows = [{} for _ in range(9)]
+    cols = [{} for _ in range(9)]
  
     def getBox(row,col):
         new_c = col //3
@@ -109,7 +109,7 @@ def solveSudoku_2(self, board: List[List[str]]) -> None:
             else:
                 if(solveBacktrack(board,boxes,rows,cols,r,c+1)):return True
  
-    solveBacktrack(board,boxes,rows,cols,0,0)
-
-
+    solveBacktrack(board,boxes,rows,cols,0,0) 
+    
+    
 
