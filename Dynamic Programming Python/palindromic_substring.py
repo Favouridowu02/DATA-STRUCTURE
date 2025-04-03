@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    This Module contains a function that contains the solution to Russian Doll Envelop Question
+    This Module contains a function that contains the solution to Palindromic Substring Question
 
     Question:
     Given a string s, return the number of palindromic substrings in it.
