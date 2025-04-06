@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    This Module contains a function that contains the solution to Longest Palindromic Substring Question
+    This Module contains a function that contains the solution to Longest Palindromic Subsequence Question
 
     Question:
     Given a string s, find the longest palindromic subsequence's length in s.
@@ -37,5 +37,4 @@ def longestPalindromeSubseq(s):
                 dp[i][j] = 2 + dp[i+j][j-1]
             else:
                 dp[i][j] = max(dp[i+1][j], dp[i][j-1])
-
     return dp[0][n - 1]
