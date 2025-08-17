@@ -34,7 +34,7 @@ The following data structures are included in this repository:
 To use the code in this repository, simply clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/data-structures.git
+git clone https://github.com/favouridowu02/data-structures.git
 ```
 
 Navigate to the directory:
